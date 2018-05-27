@@ -1,6 +1,16 @@
+# word2vector学习笔记（1）
 
-Column A | Column B | Column C
+## word类
+
+类成员：
+成员类型 | 成员名称 | 成员作用
 ---------|----------|---------
- A1 | B1 | C1
+ int32_t | B1 | C1
  A2 | B2 | C2
  A3 | B3 | C3
+
+
+
+
+### jjj
+
