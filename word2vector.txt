@@ -1,0 +1,4 @@
+struct word//基本的单词类
+&copy
+
+  
