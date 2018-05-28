@@ -1,4 +1,4 @@
-# word2vector学习笔记（1）
+# word2vector学习笔记（c++源码）
 
 ## Word类
 
@@ -6,11 +6,11 @@
 
 成员类型  | 成员名称 | 成员作用
 ---------|----------|---------
- int32_t | index_ | C1
- string  | text_  | C2
- int32_t | count_ | C3
- Word*   | left_  | C4
- Word*   | right_ | C5
+ int32_t | index_ | 索引，词表中的位置
+ string  | text_  | 词的字符串
+ int32_t | count_ | 词频数
+ Word*   | left_  | 指向哈夫曼树的左子树
+ Word*   | right_ | 指向哈夫曼树的右子树
 
  成员函数：
 
@@ -29,7 +29,7 @@ vector&lt;Word*>|words_|Word* 数组,指向句子中包含的词，无重复词
 vector&lt;String>|token_|string 数组，存储句子中词的字符串，有重复词
 vector&lt;Tag>|tags_|？
 
-## Word2Vec
+## Word2Vec类
 
 定义 SentenceP 为 std::shared_ptr&lt;Sentence>，指向句子类
 
@@ -37,6 +37,11 @@ vector&lt;Tag>|tags_|？
 
 类成员：
 
-成员类型|成员名称|成员作用
--------|-------|-------|
-vector&lt;Vector>|syn0_|参数
+成员类型|成员名称|成员作用|备注
+-------|-------|-------|-------|
+vector&lt;Vector>|syn0_|参数|无
+vector&lt;Vector>|syn1_|参数|无
+vector&lt;Vector>|syn0norm_|参数|无
+vector&lt;Vector>|syn1neg_|参数|negative sampling
+vector&lt;int>|unigram_|参数|negative sampling
+unordered_map&lt;String, WordP>|vocab_|构成词典|
